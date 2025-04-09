@@ -11,8 +11,8 @@ import os
 
 st.set_page_config(page_title="Flipkart Product Recommendation", layout="wide")
 
-# === Load Flipkart Data ===
-DATA_PATH = r"C:\Users\sanju\Downloads\product-recommendation-system-BERT-main\product-recommendation-system-BERT-main\data\flipkart_com-ecommerce_sample.csv"  # Change if needed
+DATA_PATH = r"data/flipkart_com-ecommerce_sample.csv"  # Change if needed
+
 
 @st.cache_data
 def load_data(path):
@@ -21,6 +21,7 @@ def load_data(path):
     else:
         st.error(f"File not found at {path}")
         return pd.DataFrame()
+
 
 df = load_data(DATA_PATH)
 
@@ -65,6 +66,7 @@ elif step == "🔍 Text Preprocessing":
 
         st.markdown("**After Lowercasing & Punctuation Removal:**")
         import re
+
         processed_text = re.sub(r'[^a-zA-Z\s]', '', df[text_col].dropna().iloc[0].lower())
         st.code(processed_text)
     else:
@@ -90,7 +92,8 @@ elif step == "📊 Visual Insights":
         col1, col2 = st.columns(2)
 
         with col1:
-            cat_col = st.selectbox("Select a categorical column for bar chart", df.select_dtypes(include='object').columns)
+            cat_col = st.selectbox("Select a categorical column for bar chart",
+                                   df.select_dtypes(include='object').columns)
             st.write(f"Top Categories in {cat_col}")
             top_cats = df[cat_col].value_counts().nlargest(10)
             fig, ax = plt.subplots()
@@ -98,7 +101,8 @@ elif step == "📊 Visual Insights":
             st.pyplot(fig)
 
         with col2:
-            text_col = st.selectbox("Select a column for WordCloud", df.select_dtypes(include='object').columns, key="text_wc")
+            text_col = st.selectbox("Select a column for WordCloud", df.select_dtypes(include='object').columns,
+                                    key="text_wc")
             st.write("Word Cloud:")
             text = " ".join(df[text_col].dropna().astype(str).values)
             wordcloud = WordCloud(background_color='white', width=400, height=300).generate(text)
@@ -130,26 +134,8 @@ elif step == "⚙️ Model Training Overview":
     - Optimizer: AdamW
     """)
 
-# === STEP 7: Try Recommendation ===
-# elif step == "🎯 Try Recommendation":
-#     st.subheader("🎯 Try Out Product Recommendation")
-#
-#     user_input = st.text_area("Enter a product description or keywords:")
-#     if user_input:
-#         st.write("🔍 Tokenizing input with BERT...")
-#         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-#         tokens = tokenizer.tokenize(user_input)
-#         st.write("📦 Token Preview:", tokens[:10])
-#
-#         # Mock output
-#         st.success("✅ Predicted Recommendation:")
-#         st.markdown("**Category:** Electronics \n**Recommended Product:** 'boAt Airdopes 441 Bluetooth Earbuds'")
-#
-#     else:
-#         st.info("Enter some text to get a recommendation.")
 
 elif step == "🎯 Try Recommendation":
-
 
     # Load the Flipkart dataset
     # df = pd.read_csv("flipkart_data.csv")
@@ -186,9 +172,9 @@ elif step == "🎯 Try Recommendation":
     @st.cache_resource
     def load_model_and_data():
         # Load product info
-        info_df = pd.read_csv(r"C:\Users\sanju\Downloads\product-recommendation-system-BERT-main\product-recommendation-system-BERT-main\product_info.csv")  # Must have 'title', 'category' columns
+        info_df = pd.read_csv(r"product_info.csv")  # Must have 'title', 'category' columns
         # Load pre-computed embeddings
-        embeddings = np.load(r"C:\Users\sanju\Downloads\product-recommendation-system-BERT-main\product-recommendation-system-BERT-main\product_embeddings.npy")  # Shape: (num_products, embedding_dim)
+        embeddings = np.load(r"product_embeddings.npy")  # Shape: (num_products, embedding_dim)
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
         return info_df, embeddings, tokenizer
 
@@ -234,4 +220,3 @@ elif step == "🎯 Try Recommendation":
 
     else:
         st.info("Enter some text to get a recommendation.")
-
