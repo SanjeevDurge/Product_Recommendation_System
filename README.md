@@ -12,10 +12,8 @@ The project was undertaken during an 8-week-long summer workshop held at the Cen
 
 The team behind this innovative project comprises:
 
-- Harish Satheesh
-- Kota Bharadwaj
-- Sahana
-- Vishal
+Sanjeev Durge
+Mohini Jasthi
 
 **Center for Innovation and Entrepreneurship (CIE)**: [Link to CIE](https://cie.pes.edu/)
 
@@ -40,12 +38,6 @@ The dataset(CSV file) used for training and evaluation can be downloaded from th
 Clone the repository to your local machine:
 
 ```bash
-git clone git@github.com:VishalS-HK/product-recommendation-system-BERT.git
-cd product-recommendation-system-BERT
+git clone git@github.com/SanjeevDurge/Product_Recommendation_System.git
+cd product-recommendation-system
 ```
-
-## Contact
-For any inquiries or questions, please contact vishal.rsn21@gmail.com.
-
----
-<p align="center"><img src="https://hits.sh/github.com/VishalS-HK/product-recommendation-system-BERT.svg?label=Views&color=fc8e00&labelColor=000" alt="view-count" /></p>
