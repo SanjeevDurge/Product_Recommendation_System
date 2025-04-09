@@ -1,0 +1,83 @@
+
+=========================
+🛍️ Flipkart Product Recommendation App — Documentation
+=========================
+
+Welcome to the Product Recommendation App powered by BERT! 
+This app allows users to input any product description or keyword and get smart, AI-driven product suggestions from a curated Flipkart dataset.
+
+-------------------------
+📋 What You Can Do
+-------------------------
+
+1. Explore Data Processing Steps
+--------------------------------
+Use the sidebar to select different stages of the data pipeline:
+- Goal & Overview
+- Dataset Overview
+- Missing Value Analysis
+- EDA (Exploratory Data Analysis)
+- Text Preprocessing
+- Tokenization with BERT
+- Recommendation Engine
+
+Each section provides charts, summaries, and code insights into how the data is cleaned and processed.
+
+2. Try Out Product Recommendations
+----------------------------------
+- Go to the "🎯 Try Recommendation" section.
+- Input a product description or keyword (e.g., "wireless headphones" or "blue cotton t-shirt").
+- The app will:
+    - Tokenize your input with BERT tokenizer
+    - Generate an embedding for your query
+    - Compare it with precomputed embeddings from real Flipkart products
+    - Return the Top 3 most similar products as recommendations
+
+-------------------------
+💬 Example Inputs
+-------------------------
+
+| Input Description                | What You Might Get                        |
+|----------------------------------|-------------------------------------------|
+| cotton round neck t-shirt        | Puma Cotton Round Neck T-Shirt            |
+| wireless earbuds with mic        | boAt Airdopes 441 Bluetooth Earbuds       |
+| women's shorts for summer        | Alisha Solid Women's Cycling Shorts       |
+| budget gaming laptop             | ASUS TUF Gaming F15 Core i5 10th Gen      |
+
+-------------------------
+📊 Features You’ll See
+-------------------------
+
+- Bar plots and pie charts summarizing product distribution
+- Word clouds and category analysis
+- Top brands, price ranges, and missing value handling
+- Interactive user input section for real-time recommendations
+- [CLS] token-level BERT embedding insights
+
+-------------------------
+📁 App Requirements (If Running Locally)
+-------------------------
+
+To run the app:
+
+1. Ensure Python >= 3.8 is installed.
+2. Install dependencies:
+   pip install streamlit transformers torch pandas numpy matplotlib seaborn
+
+3. Place these files in the same directory:
+   - app.py (your Streamlit app)
+   - flipkart_data.csv
+   - product_info.csv
+   - product_embeddings.npy
+
+4. Run the app:
+   streamlit run app.py
+
+-------------------------
+🤝 About This Project
+-------------------------
+
+This app is a part of a product recommendation system project using BERT embeddings to understand text-based similarity. 
+It's designed to be interactive and educational — great for both users and data science students.
+
+Developed by Sanjeev Durge.
