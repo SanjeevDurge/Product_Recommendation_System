@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7737221-5f3f-4402-b794-436871366226" name="Changes" comment="requirements file">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/103325de784f53c0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/activity_log.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/embeddings5_new.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mlops-2025-03-20-021715.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommendation_logs.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/streamlit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flipkart_Product_Recommendation_App_Documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Flipkart_Product_Recommendation_App_Documentation.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_embeddings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_embeddings.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_info.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="c7737221-5f3f-4402-b794-436871366226" name="Changes" comment="streamlit integration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +70,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744170567744</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="streamlit integration">
+      <option name="closed" value="true" />
+      <created>1745374592936</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745374592936</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +95,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="requirements file" />
-    <option name="LAST_COMMIT_MESSAGE" value="requirements file" />
+    <MESSAGE value="streamlit integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="streamlit integration" />
   </component>
 </project>
