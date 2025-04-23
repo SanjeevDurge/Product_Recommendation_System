@@ -1,4 +1,4 @@
-from graphviz import Digraph
+# from graphviz import Digraph
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -198,31 +198,30 @@ elif page == "Methodology":
         # mlflow_url = "http://localhost:5000/#/experiments/0"
         # st.markdown(f"[🔗 View Latest MLflow Run]({mlflow_url})", unsafe_allow_html=True)
 
-    st.subheader("🔄 End-to-End Pipeline")
+    # st.subheader("🔄 End-to-End Pipeline")
+    # dot = Digraph()
+    # dot.attr(rankdir="LR", size='8,5')
+    # dot.attr('node', shape='box', style='filled', fillcolor='#e0f7fa')
 
-    dot = Digraph()
-    dot.attr(rankdir="LR", size='8,5')
-    dot.attr('node', shape='box', style='filled', fillcolor='#e0f7fa')
-
-    nodes = [
-        ("Data", "📁 Data Preparation"),
-        ("Embed", "🤖 BERT Embedding"),
-        ("Sim", "📈 Cosine Similarity"),
-        ("Reco", "🎁 Recommendations"),
-        ("Track", "📊 MLflow Tracking")
-    ]
-
-    for key, label in nodes:
-        dot.node(key, label)
-
-    dot.edges([
-        ("Data", "Embed"),
-        ("Embed", "Sim"),
-        ("Sim", "Reco"),
-        ("Reco", "Track")
-    ])
-
-    st.graphviz_chart(dot)
+    # nodes = [
+    #     ("Data", "📁 Data Preparation"),
+    #     ("Embed", "🤖 BERT Embedding"),
+    #     ("Sim", "📈 Cosine Similarity"),
+    #     ("Reco", "🎁 Recommendations"),
+    #     ("Track", "📊 MLflow Tracking")
+    # ]
+    #
+    # for key, label in nodes:
+    #     dot.node(key, label)
+    #
+    # dot.edges([
+    #     ("Data", "Embed"),
+    #     ("Embed", "Sim"),
+    #     ("Sim", "Reco"),
+    #     ("Reco", "Track")
+    # ])
+    #
+    # st.graphviz_chart(dot)
 
     st.success("Now you know what powers SmartShop under the hood! 💡")
 
