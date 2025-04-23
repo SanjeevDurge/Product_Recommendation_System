@@ -25,9 +25,6 @@ Mohini Jasthi
 - Easy-to-use API for integrating the recommendation system into your applications.
 - Extensible and modifiable architecture to accommodate specific use cases.
 
-## Jupyter Notebook
-
-You can find a detailed step-by-step implementation of the recommendation system in the Jupyter Notebook provided in this repository: [Link to Jupyter Notebook](https://github.com/VishalS-HK/product-recommendation-system-BERT/blob/main/Product_Recommendation_System_BERT.ipynb)
 
 ## Dataset
 
