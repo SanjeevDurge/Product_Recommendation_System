@@ -8,3 +8,13 @@ seaborn
 streamlit
 requests
 scipy
+wordcloud
+mlflow
+sentence_transformers
+plotly
+fuzzywuzzy
+Levenshtein
+python-Levenshtein
+joblib
+pygments
+import os

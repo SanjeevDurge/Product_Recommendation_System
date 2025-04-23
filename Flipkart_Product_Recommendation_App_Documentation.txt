@@ -71,7 +71,7 @@ To run the app:
    - product_embeddings.npy
 
 4. Run the app:
-   streamlit run app.py
+   streamlit run streamlit.py
 
 -------------------------
 🤝 About This Project
