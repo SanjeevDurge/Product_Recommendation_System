@@ -12,23 +12,30 @@ import Levenshtein
 import plotly.express as px
 import mlflow.tracking
 from google.cloud import storage
+from google.oauth2 import service_account
 from io import BytesIO
 import os
+import base64
 
 # Set page config for wider layout
 st.set_page_config(layout="wide")
 
 gcp_key_str = os.getenv("GCP_KEY")
 gcp_key_path = "/tmp/gcp-key.json"
+
+# if gcp_key_str:
+#     with open(gcp_key_path, "w") as f:
+#         f.write(gcp_key_str)
 if gcp_key_str:
-    with open(gcp_key_path, "w") as f:
-        f.write(gcp_key_str)
+    with open(gcp_key_path, "wb") as f:
+        f.write(base64.b64decode(gcp_key_str))
 
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_key_path
+credentials = service_account.Credentials.from_service_account_file(gcp_key_path)
 
 
 GCP_PROJECT_ID = "vertex-ai-364806"
-client = storage.Client(project=GCP_PROJECT_ID)
+client = storage.Client(project=GCP_PROJECT_ID, credentials = credentials)
 bucket = client.get_bucket("mlops_bucket_pr")
 
 MLFLOW_URI = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
