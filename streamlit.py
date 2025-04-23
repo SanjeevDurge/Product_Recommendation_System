@@ -25,7 +25,10 @@ if gcp_key_str:
         f.write(gcp_key_str)
 
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_key_path
-client = storage.Client()
+
+
+GCP_PROJECT_ID = "vertex-ai-364806"
+client = storage.Client(project=GCP_PROJECT_ID)
 bucket = client.get_bucket("mlops_bucket_pr")
 
 MLFLOW_URI = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
