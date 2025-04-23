@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7737221-5f3f-4402-b794-436871366226" name="Changes" comment="streamlit integration" />
+    <list default="true" id="c7737221-5f3f-4402-b794-436871366226" name="Changes" comment="requirements.txt os update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +78,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745374592936</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="requirements.txt os update">
+      <option name="closed" value="true" />
+      <created>1745374907540</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745374907540</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +104,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="requirements file" />
     <MESSAGE value="streamlit integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="streamlit integration" />
+    <MESSAGE value="requirements.txt os update" />
+    <option name="LAST_COMMIT_MESSAGE" value="requirements.txt os update" />
   </component>
 </project>
