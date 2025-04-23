@@ -18,6 +18,13 @@ import os
 # Set page config for wider layout
 st.set_page_config(layout="wide")
 
+gcp_key_str = os.getenv("GCP_KEY")
+gcp_key_path = "/tmp/gcp-key.json"
+if gcp_key_str:
+    with open(gcp_key_path, "w") as f:
+        f.write(gcp_key_str)
+
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_key_path
 client = storage.Client()
 bucket = client.get_bucket("mlops_bucket_pr")
 
