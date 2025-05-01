@@ -12,31 +12,14 @@ import Levenshtein
 import plotly.express as px
 import mlflow.tracking
 from google.cloud import storage
-from google.oauth2 import service_account
 from io import BytesIO
 import os
-import base64
 
 # Set page config for wider layout
 st.set_page_config(layout="wide")
-
-gcp_key_str = os.getenv("GCP_KEY")
-gcp_key_path = "/tmp/gcp-key.json"
-
-# if gcp_key_str:
-#     with open(gcp_key_path, "w") as f:
-#         f.write(gcp_key_str)
-if gcp_key_str:
-    with open(gcp_key_path, "wb") as f:
-        f.write(base64.b64decode(gcp_key_str))
-
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_key_path
-credentials = service_account.Credentials.from_service_account_file(gcp_key_path)
-
-
-GCP_PROJECT_ID = "vertex-ai-364806"
-client = storage.Client(project=GCP_PROJECT_ID, credentials = credentials)
-bucket = client.get_bucket("mlops_bucket_pr")
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\sanju\AppData\Roaming\gcloud\application_default_credentials.json"
+# client = storage.Client()
+# bucket = client.get_bucket("mlops_bucket_pr")
 
 MLFLOW_URI = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
 mlflow.set_tracking_uri(MLFLOW_URI)
@@ -45,26 +28,7 @@ mlflow.set_tracking_uri(MLFLOW_URI)
 # Load dataset
 @st.cache_data
 def load_data():
-    # df = pd.read_csv("data/flipkart_com-ecommerce_sample.csv")
-    # df = df[[
-    #     "uniq_id", "product_name", "description", "brand",
-    #     "product_category_tree", "product_url", "image",
-    #     "discounted_price", "product_rating", "product_specifications"
-    # ]]
-    # df = df.dropna(subset=["product_name", "description"])
-    # df["text"] = df["product_name"] + " " + df["description"]
-    #
-    # import ast
-    # df["image"] = df["image"].apply(lambda x: ast.literal_eval(x)[0] if pd.notnull(x) and "[" in x else None)
-    # return df
-
-    # client = storage.Client()
-    # bucket = client.get_bucket("mlops_bucket_pr")
-    blob = bucket.blob("flipkart_com-ecommerce_sample.csv")
-    data = blob.download_as_bytes()
-
-    # Read into pandas
-    df = pd.read_csv(BytesIO(data))
+    df = pd.read_csv("data/flipkart_com-ecommerce_sample.csv")
     df = df[[
         "uniq_id", "product_name", "description", "brand",
         "product_category_tree", "product_url", "image",
@@ -77,19 +41,38 @@ def load_data():
     df["image"] = df["image"].apply(lambda x: ast.literal_eval(x)[0] if pd.notnull(x) and "[" in x else None)
     return df
 
+    # client = storage.Client()
+    # bucket = client.get_bucket("mlops_bucket_pr")
+    # blob = bucket.blob("flipkart_com-ecommerce_sample.csv")
+    # data = blob.download_as_bytes()
+    #
+    # # Read into pandas
+    # df = pd.read_csv(BytesIO(data))
+    # df = df[[
+    #     "uniq_id", "product_name", "description", "brand",
+    #     "product_category_tree", "product_url", "image",
+    #     "discounted_price", "product_rating", "product_specifications"
+    # ]]
+    # df = df.dropna(subset=["product_name", "description"])
+    # df["text"] = df["product_name"] + " " + df["description"]
+    #
+    # import ast
+    # df["image"] = df["image"].apply(lambda x: ast.literal_eval(x)[0] if pd.notnull(x) and "[" in x else None)
+    # return df
+
 
 df = load_data()
 
 
 @st.cache_resource
 def load_embeddings():
-    # return np.load("embeddings5_new.npy")
+    return np.load("embeddings5_new.npy")
 
     # bucket = client.get_bucket("mlops_bucket_pr")
-    blob = bucket.blob("embeddings5_new.npy")
-    data = blob.download_as_bytes()
-
-    return np.load(BytesIO(data))
+    # blob = bucket.blob("embeddings5_new.npy")
+    # data = blob.download_as_bytes()
+    #
+    # return np.load(BytesIO(data))
 
 
 @st.cache_resource

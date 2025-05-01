@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7737221-5f3f-4402-b794-436871366226" name="Changes" comment="google-cloud-storage added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/activity_log.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streamlit.py" beforeDir="false" afterPath="$PROJECT_DIR$/streamlit.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sanju/Downloads/product-recommendation-system-BERT-main/product-recommendation-system-BERT-main/test.py&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/sanju/Downloads/product-recommendation-system-BERT-main/product-recommendation-system-BERT-main/test.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/sanju/OneDrive/Documents/product-recommendation-system-BERT-main/streamlit.py",
+    "two.files.diff.last.used.file": "C:/Users/sanju/OneDrive/Documents/product-recommendation-system-BERT-main/streamlit.py"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -113,7 +114,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745375585251</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="google-cloud-storage added">
+      <option name="closed" value="true" />
+      <created>1745376614762</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745376614762</updated>
+    </task>
+    <task id="LOCAL-00010" summary="google-cloud-storage added">
+      <option name="closed" value="true" />
+      <created>1745376829535</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745376829535</updated>
+    </task>
+    <task id="LOCAL-00011" summary="google-cloud-storage added">
+      <option name="closed" value="true" />
+      <created>1745377627374</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745377627374</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
