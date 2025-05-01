@@ -12,12 +12,18 @@ import Levenshtein
 import plotly.express as px
 import mlflow.tracking
 from google.cloud import storage
+from google.oauth2 import service_account
 from io import BytesIO
 import os
+import base64
 
 # Set page config for wider layout
 st.set_page_config(layout="wide")
 # os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\sanju\AppData\Roaming\gcloud\application_default_credentials.json"
+# client = storage.Client()
+# bucket = client.get_bucket("mlops_bucket_pr")
+
+# GCP_PROJECT_ID = "vertex-ai-364806"
 # client = storage.Client()
 # bucket = client.get_bucket("mlops_bucket_pr")
 
@@ -71,7 +77,7 @@ def load_embeddings():
     # bucket = client.get_bucket("mlops_bucket_pr")
     # blob = bucket.blob("embeddings5_new.npy")
     # data = blob.download_as_bytes()
-    #
+
     # return np.load(BytesIO(data))
 
 
